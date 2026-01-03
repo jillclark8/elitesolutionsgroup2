@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Solutions Group | Complete Commercial Building Solutions in Denver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Brand colors from logo */
+            --primary-teal: #4CB5C5;
+            --dark-navy: #2C3E50;
+            --darker-navy: #1A252F;
+            --light: #F0F4F8;
+            --white: #FFFFFF;
+            --text-gray: #9BA5B5;
+            --accent-light: #6DD5E5;
+            --accent-dark: #3A98A8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--darker-navy);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 37, 47, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary-teal);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 90px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.08);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-teal);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-teal);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-light));
+            padding: 0.9rem 2.5rem;
+            border-radius: 4px;
+            color: var(--darker-navy);
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(76, 181, 197, 0.3);
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 181, 197, 0.5);
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 140px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker-navy) 0%, #1F2D3D 50%, var(--dark-navy) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(76, 181, 197, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(76, 181, 197, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(76, 181, 197, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 181, 197, 0.08) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-logo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-logo img {
+            max-width: 550px;
+            width: 100%;
+            position: relative;
+            filter: drop-shadow(0 10px 40px rgba(76, 181, 197, 0.6));
+        }
+
+        .hero-tag {
+            display: inline-block;
+            color: var(--primary-teal);
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            padding: 0.6rem 1.8rem;
+            border: 2px solid var(--primary-teal);
+            border-radius: 3px;
+            animation: fadeInUp 0.8s ease-out;
+            box-shadow: 0 0 25px rgba(76, 181, 197, 0.3);
+            background: rgba(76, 181, 197, 0.05);
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 0.95;
+            letter-spacing: 5px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 .accent-text {
+            color: var(--primary-teal);
+            display: block;
+            text-shadow: 0 0 40px rgba(76, 181, 197, 0.6);
+        }
+
+        .hero-description {
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            max-width: 650px;
+            margin-bottom: 3.5rem;
+            line-height: 1.7;
+            font-weight: 500;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1.3rem 3.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-light));
+            color: var(--darker-navy);
+            box-shadow: 0 5px 20px rgba(76, 181, 197, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(76, 181, 197, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 3px solid var(--primary-teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-teal);
+            color: var(--darker-navy);
+            border-color: var(--primary-teal);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--dark-navy);
+            padding: 5rem 2rem;
+            margin: 4rem 0;
+            border-top: 3px solid var(--primary-teal);
+            border-bottom: 3px solid var(--primary-teal);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 4rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+            padding: 2.5rem;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-light));
+            box-shadow: 0 0 15px var(--primary-teal);
+        }
+
+        .stat-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--primary-teal);
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 30px rgba(76, 181, 197, 0.4);
+        }
+
+        .stat-item p {
+            font-size: 1.3rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+
+        /* Problem Solution Section */
+        .problem-solution {
+            max-width: 1400px;
+            margin: 10rem auto;
+            padding: 0 2rem;
+        }
+
+        .problem-solution h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            letter-spacing: 4px;
+            color: var(--white);
+        }
+
+        .problem-solution .subtitle {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            margin-bottom: 5rem;
+            font-weight: 500;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .problem-card {
+            background: var(--dark-navy);
+            padding: 3rem;
+            border-left: 5px solid var(--primary-teal);
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .problem-card:hover {
+            transform: translateX(12px);
+            box-shadow: -15px 15px 40px rgba(76, 181, 197, 0.25);
+            border-left-color: var(--accent-light);
+        }
+
+        .problem-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-teal);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .problem-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 1.15rem;
+        }
+
+        .solution-box {
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-light) 50%, var(--primary-teal) 100%);
+            padding: 5rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 15px 50px rgba(76, 181, 197, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        /* Logo watermark in solution box */
+        .solution-box::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background-image: url('Elite_Solutions_Group_5.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .solution-box h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--darker-navy);
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-box p {
+            font-size: 1.4rem;
+            color: var(--darker-navy);
+            font-weight: 600;
+            line-height: 1.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--dark-navy);
+            padding: 10rem 2rem;
+            border-top: 3px solid var(--primary-teal);
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+            color: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+            gap: 3.5rem;
+            margin-top: 5rem;
+        }
+
+        .service-card {
+            background: var(--darker-navy);
+            padding: 3.5rem;
+            border: 2px solid transparent;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-light), var(--primary-teal));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-teal);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(76, 181, 197, 0.35);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-teal);
+            filter: drop-shadow(0 0 15px rgba(76, 181, 197, 0.5));
+        }
+
+        .service-icon img {
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(0 0 15px rgba(76, 181, 197, 0.5));
+        }
+
+        .service-card h3 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        .service-card li {
+            padding: 1rem 0;
+            color: var(--text-gray);
+            border-bottom: 1px solid rgba(155, 165, 181, 0.15);
+            font-size: 1.15rem;
+            font-weight: 500;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+
+        .service-card li:hover {
+            color: var(--light);
+            padding-left: 10px;
+        }
+
+        .service-card li::before {
+            content: '▸';
+            color: var(--primary-teal);
+            font-weight: bold;
+            margin-right: 1.2rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            max-width: 1400px;
+            margin: 10rem auto;
+            padding: 0 2rem;
+        }
+
+        .why-choose h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            text-align: center;
+            margin-bottom: 5rem;
+            letter-spacing: 4px;
+            color: var(--white);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3.5rem;
+        }
+
+        .reason-card {
+            text-align: center;
+            padding: 3rem;
+            background: var(--dark-navy);
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .reason-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(76, 181, 197, 0.3);
+            border-color: var(--primary-teal);
+        }
+
+        .reason-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 15px rgba(76, 181, 197, 0.6));
+        }
+
+        .reason-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: var(--primary-teal);
+        }
+
+        .reason-card p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            font-size: 1.15rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-light) 50%, var(--primary-teal) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            animation: rotate 25s linear infinite;
+        }
+
+        /* Large logo watermark in CTA section */
+        .cta-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background-image: url('Elite_Solutions_Group_5.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .cta-section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            color: var(--darker-navy);
+            margin-bottom: 2rem;
+            letter-spacing: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.5rem;
+            color: var(--darker-navy);
+            margin-bottom: 3.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section .btn {
+            background: var(--darker-navy);
+            color: var(--white);
+            border: 3px solid var(--darker-navy);
+            position: relative;
+            z-index: 1;
+            font-size: 1.3rem;
+            padding: 1.5rem 4rem;
+        }
+
+        .cta-section .btn:hover {
+            background: transparent;
+            color: var(--darker-navy);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-navy);
+            padding: 5rem 2rem 2.5rem;
+            border-top: 3px solid var(--primary-teal);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            color: var(--primary-teal);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-gray);
+            line-height: 2;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
+            transition: all 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-teal);
+            padding-left: 5px;
+        }
+
+        .footer-logo {
+            max-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(155, 165, 181, 0.2);
+            color: var(--text-gray);
+            font-size: 1.05rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .logo-container img {
+                height: 65px;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-logo {
+                order: -1;
+            }
+
+            .hero-logo img {
+                max-width: 350px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .btn {
+                text-align: center;
+                width: 100%;
+            }
+
+            .services-grid,
+            .reasons-grid,
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-box {
+                padding: 3rem;
+            }
+
+            .solution-box::after {
+                width: 250px;
+                height: 250px;
+            }
+
+            .stat-item h3 {
+                font-size: 4rem;
+            }
+
+            .service-card,
+            .problem-card,
+            .reason-card {
+                padding: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="Elite_Solutions_Group_5.png" alt="Elite Solutions Group">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="#contact" class="cta-nav">Get Quote</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">Denver's Premier Building Solutions</div>
+                <h1>
+                    ONE PARTNER.<br>
+                    <span class="accent-text">EVERY SOLUTION.</span>
+                </h1>
+                <p class="hero-description">
+                    Stop juggling multiple contractors. Elite Solutions Group delivers complete commercial building services—waterproofing, flooring, striping, and more—from a single trusted team.
+                </p>
+                <div class="hero-cta">
+                    <a href="tel:303-360-5606" class="btn btn-primary">Get Free Quote</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-logo">
+                <img src="Elite_Solutions_Group_5.png" alt="Elite Solutions Group - Colorado's Trusted Commercial Building Partner">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>40+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Emergency Service</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem/Solution -->
+    <section class="problem-solution">
+        <h2>THE CONTRACTOR COORDINATION NIGHTMARE</h2>
+        <p class="subtitle">Managing commercial properties shouldn't mean managing chaos</p>
+        
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>Multiple Vendors</h3>
+                <p>Coordinating waterproofing, flooring, striping, and repairs means scheduling 3-5 different contractors. Each with their own timeline.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Quality Inconsistency</h3>
+                <p>When problems arise, everyone points fingers. Nobody takes ownership. Your building pays the price.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Emergency Delays</h3>
+                <p>Water damage doesn't wait. But finding multiple specialized contractors during a crisis? That takes days you don't have.</p>
+            </div>
+        </div>
+
+        <div class="solution-box">
+            <h3>THE ELITE SOLUTION</h3>
+            <p>One call. One company. One guarantee. We handle waterproofing, epoxy flooring, striping, and more—delivered by a single accountable team that knows your property inside and out.</p>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2>COMPLETE COMMERCIAL SERVICES</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Waterproofing</h3>
+                    <ul>
+                        <li>Below-grade & on-grade waterproofing</li>
+                        <li>Foundation & basement protection</li>
+                        <li>Parking structure waterproofing</li>
+                        <li>Plaza & terrace deck systems</li>
+                        <li>Structural epoxy injections</li>
+                        <li>Emergency leak repairs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🪣</div>
+                    <h3>Epoxy Flooring</h3>
+                    <ul>
+                        <li>High-performance floor coatings</li>
+                        <li>Industrial & commercial applications</li>
+                        <li>Slip-resistant finishes</li>
+                        <li>Chemical-resistant systems</li>
+                        <li>Decorative concrete coatings</li>
+                        <li>Fast-cure installations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🚗</div>
+                    <h3>Striping & Traffic Coatings</h3>
+                    <ul>
+                        <li>Parking lot striping & restriping</li>
+                        <li>ADA-compliant markings</li>
+                        <li>Traffic flow optimization</li>
+                        <li>Pedestrian coating systems</li>
+                        <li>Parking garage coatings</li>
+                        <li>Line removal & surface prep</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Snow Removal</h3>
+                    <ul>
+                        <li>Commercial property snow plowing</li>
+                        <li>Professional de-icing services</li>
+                        <li>Parking lot & walkway clearing</li>
+                        <li>24/7 emergency snow response</li>
+                        <li>Seasonal maintenance contracts</li>
+                        <li>Ice management & prevention</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Caulking & Sealing</h3>
+                    <ul>
+                        <li>Expansion joint sealing</li>
+                        <li>Window & door caulking</li>
+                        <li>Structural sealant application</li>
+                        <li>Weather barrier systems</li>
+                        <li>Air & water infiltration prevention</li>
+                        <li>Colorado climate-specific solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Additional Services</h3>
+                    <ul>
+                        <li>Masonry repair & tuck pointing</li>
+                        <li>Commercial painting & coating</li>
+                        <li>Metal flashing installation</li>
+                        <li>Emergency response</li>
+                        <li>Preventative maintenance</li>
+                        <li>Property inspections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose" id="why-us">
+        <h2>WHY PROPERTY MANAGERS CHOOSE ELITE</h2>
+        
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-icon">⚡</div>
+                <h3>Single Point of Contact</h3>
+                <p>One project manager coordinates all trades. No more playing phone tag with multiple contractors or dealing with scheduling conflicts.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🛡️</div>
+                <h3>Total Accountability</h3>
+                <p>When we're responsible for every aspect of the job, there's nowhere to hide. We stand behind our work with comprehensive warranties.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">💰</div>
+                <h3>Cost Efficiency</h3>
+                <p>Bundled services mean better pricing, reduced mobilization costs, and fewer change orders. Your budget goes further with Elite.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">⏱️</div>
+                <h3>Faster Timelines</h3>
+                <p>Coordinated crews working together complete projects 30-40% faster than juggling separate contractors. Less disruption to your tenants.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🏔️</div>
+                <h3>Colorado Expertise</h3>
+                <p>We understand Denver's climate challenges—freeze-thaw cycles, UV exposure, and rapid weather changes. Our solutions are built to last here.</p>
+            </div>
+            
+            <div class="reason-card">
+                <div class="reason-icon">🚨</div>
+                <h3>Emergency Ready</h3>
+                <p>Water damage at 2 AM? Structural issue discovered during inspection? We respond immediately with the full range of services you need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <h2>READY TO SIMPLIFY YOUR BUILDING MAINTENANCE?</h2>
+        <p>Get a free consultation and discover how much easier property management can be.</p>
+        <a href="tel:303-360-5606" class="btn">Call 303-360-5606</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="Elite_Solutions_Group_5.png" alt="Elite Solutions Group" class="footer-logo">
+                <p>Complete commercial building solutions for Denver's property managers and facility directors.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <a href="tel:303-360-5606">303-360-5606</a>
+                <a href="mailto:office@elitesg.biz">office@elitesg.biz</a>
+                <p>7270 Gilpin Way, Suite 210<br>Denver, CO 80229</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8am - 5pm<br>Saturday: By Appointment<br>Sunday: Closed<br><br>24/7 Emergency Service Available</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#services">Waterproofing</a>
+                <a href="#services">Epoxy Flooring</a>
+                <a href="#services">Striping & Traffic Coatings</a>
+                <a href="#services">Snow Removal</a>
+                <a href="#services">Caulking & Sealing</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Elite Solutions Group. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
